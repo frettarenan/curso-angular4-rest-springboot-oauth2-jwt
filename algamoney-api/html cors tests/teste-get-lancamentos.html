@@ -1,0 +1,22 @@
+<html>
+<body>
+
+<button onclick="buscar()">Buscar lancamentos</button>
+
+<script>
+function printResponse() {
+  console.log(this.responseText);
+}
+
+function buscar() {
+	var req = new XMLHttpRequest();
+	req.addEventListener("load", printResponse);
+	req.open("GET", "http://localhost:8080/lancamentos");
+	req.setRequestHeader("Authorization", "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE1MDg0MjgyMDcsInVzZXJfbmFtZSI6ImFkbWluQGFsZ2Ftb25leS5jb20iLCJhdXRob3JpdGllcyI6WyJST0xFX0NBREFTVFJBUl9DQVRFR09SSUEiLCJST0xFX1BFU1FVSVNBUl9QRVNTT0EiLCJST0xFX1JFTU9WRVJfUEVTU09BIiwiUk9MRV9DQURBU1RSQVJfTEFOQ0FNRU5UTyIsIlJPTEVfUEVTUVVJU0FSX0xBTkNBTUVOVE8iLCJST0xFX1JFTU9WRVJfTEFOQ0FNRU5UTyIsIlJPTEVfQ0FEQVNUUkFSX1BFU1NPQSIsIlJPTEVfUEVTUVVJU0FSX0NBVEVHT1JJQSJdLCJqdGkiOiJiZDM1ZDlhYS1lOGM2LTQwYTUtOGU0Zi05YTUyN2U2YmYwMjYiLCJjbGllbnRfaWQiOiJhbmd1bGFyIiwic2NvcGUiOlsicmVhZCIsIndyaXRlIl19.AtxAeX-5J0HUp6lzFAT88MaIHndTQONqoNwJhtWwfC8");
+
+	req.send();
+}
+</script>
+
+</body>
+</html>
